@@ -1,0 +1,88 @@
+-- custom source
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+Slider:Set(2)
+CoolLabel:Set("Label New!")
+Tab:AddParagraph("Paragraph","Paragraph Content")
+CoolParagraph:Set("Paragraph New!", "New Paragraph Content!")
+ColorPicker:Set(Color3.fromRGB(255,255,255))
+CoolToggle:Set(true)
+Bind:Set(Enum.KeyCode.E)
+Dropdown:Refresh(List<table>,true)
+local PlayerTab = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = PlayerTab:AddSection({
+    Name = "1"
+})
+OrionLib:MakeNotification({
+	Name = "fuck you dumbass nigger",
+	Content = "you dumbass this is a test",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+Tab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+Tab:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 20,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+Tab:AddTextbox({
+	Name = "Textbox",
+	Default = "default box input",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+Tab:AddBind({
+	Name = "Bind",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		print("press")
+	end    
+})
+Tab:AddDropdown({
+	Name = "Dropdown",
+	Default = "1",
+	Options = {"1", "2"},
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+Tab1:AddToggle({
+    Name = "Toggle",
+    Default = true,
+    Save = true,
+    Flag = "toggle"
+})
+print(OrionLib.Flags["toggle"].Value)
